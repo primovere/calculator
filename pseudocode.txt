@@ -1,0 +1,131 @@
+Show the number on the display
+create variable displayValue = div.textContent
+the initial value is empty string("")
+it is displayed on the div, so assign the value to div's textContent
+
+when pressing any number buttons
+add the number(string type) to displayValue 
+the div's textContent is assigned the value of displayValue
+(by addEventListener)
+if pressing number buttons after clicking operator button,
+clear displayValue
+
+
+
+create variable operator
+if pressing operators button:
+1. get the first number (convert string to number)
+
+or
+2. clear the displayValue 
+and then get the 2nd number
+to get the answer of 2 previous 
+numbers (i.e run operate()) 
+and store the answer as new first number
+and then display the value
+(by addEventListener)
+
+
+if pressing equal button, clear the displayValue
+get the 2nd number
+and then get the result 
+run operate()
+if it get operator, x, y
+display the result store it as firstNum
+else
+display "error" when pressing =,
+
+
+should I create variables like firstNum,
+SecNum and operator?
+
+
+//////////////////////////////////////////////////////////////////
+create and append: buttons, display
+there are 4 classes: number, operator, equal and clear
+
+number:
+create and append a div as the container (called "numContainer)
+use for loop to create the ten buttons
+for (let i = 0; i < 10; i ++) {
+  const button = document.createElement("button");
+  button.textContent = `${i}`;
+  numContainer.appendChild(button);
+}
+
+operator:
+create and append a div as the container (called "operatorContainer)
+create an array includes operators arr_operators = ["+", "-", "×", "÷"];
+use array.forEach to create the 4 buttons
+arr_operators.forEach((operator) => {
+  const button = document.createElement("button");
+  button.textContent = operator;
+  operatorContainer.appendChild(button);
+})
+
+eqaul:
+create and append the button
+
+clear:
+create and append the button
+
+display:
+create and and the div
+fill it with dummy numbers
+
+//////////////////////////////////////////////////
+display function
+create variable firstNum, secondNum and operator
+contains addEventListener of buttons
+
+button.addEventListener("click", () => didplayvalue += "3")
+if pressing operators button:
+1. get the first number (convert string to number)
+
+if pressing equal button, clear the displayValue
+get the 2nd number
+
+Show the number on the display
+create variable displayValue = div.textContent
+the initial value is empty string("")
+it is displayed on the div, so assign the value to div's textContent
+
+when pressing any number buttons
+add the number(string type) to displayValue 
+the div's textContent is assigned the value of displayValue
+(by addEventListener)
+if pressing number buttons after clicking operator button,
+clear displayValue
+
+
+
+create variable operator
+if pressing operators button:
+1. get the first number (convert string to number)
+
+or
+2. clear the displayValue 
+and then get the 2nd number
+to get the answer of 2 previous 
+numbers (i.e run operate()) 
+and store the answer as new first number
+and then display the value
+(by addEventListener)
+
+
+if pressing equal button, clear the displayValue
+get the 2nd number
+and then get the result 
+run operate()
+if it get operator, x, y
+display the result store it as firstNum
+else
+display "error" when pressing =,
+
+/////////////////////////////////
+round the result to tenth digit
+if divide by 0 display error
+
+
+
+
