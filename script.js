@@ -28,7 +28,11 @@ function displayValue() {
   const btn_nums = document.querySelectorAll(".number");
   btn_nums.forEach(button => {
     button.addEventListener("click", () => {
+      if (display.textContent === "0") {
+        display.textContent = "";
+      }
       display.textContent += `${button.textContent}`;
+
     })
   });
 }
