@@ -21,10 +21,23 @@ function operate(operator, x, y) {
   if (operator === "/") return divide(x, u);
 }
 
+function displayValue() {
+  const display = document.querySelector(".display");
+
+  
+  const btn_nums = document.querySelectorAll(".number");
+  btn_nums.forEach(button => {
+    button.addEventListener("click", () => {
+      display.textContent += `${button.textContent}`;
+    })
+  });
+}
+
 const numContainer = document.querySelector(".num-container");
 for (let i = 0; i < 10; i ++) {
   const button = document.createElement("button");
   button.textContent = `${i}`;
+  button.classList.add("number");
   numContainer.appendChild(button);
 }
 
@@ -35,3 +48,6 @@ arr_operators.forEach(operator => {
   button.textContent = operator;
   operatorContainer.appendChild(button);
 })
+
+
+displayValue();
