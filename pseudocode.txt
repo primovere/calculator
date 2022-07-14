@@ -91,7 +91,8 @@ the initial value is empty string("")
 it is displayed on the div, so assign the value to div.textContent
 
 when pressing any number buttons
-add the number(string type) to displayValue
+clear the initial value (0)
+and then add the number(string type) to displayValue
 (by addEventListener)
 if pressing number buttons after clicking operator button,
 clear displayValue
