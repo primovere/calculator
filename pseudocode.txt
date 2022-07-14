@@ -58,7 +58,7 @@ create and append a div as the container (called "operatorContainer)
 create an array includes operators arr_operators = ["+", "-", "×", "÷"];
 use array.forEach to create the 4 buttons
 arr_operators.forEach((operator) => {
-  const button = document.createElement("button");
+  const button = document.createElement(".button");
   button.textContent = operator;
   operatorContainer.appendChild(button);
 })
