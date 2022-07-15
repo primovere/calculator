@@ -53,6 +53,11 @@ function displayValue() {
     secondNum = display.textContent;
     display.textContent = operate(operator, firstNum, secondNum);
   });
+
+  const btn_clear = document.querySelector(".clear");
+  btn_clear.addEventListener("click", () => {
+    display.textContent = "0";
+  })
 }
 
 const numContainer = document.querySelector(".num-container");
