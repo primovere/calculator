@@ -1,5 +1,5 @@
 function add(x, y) {
-  return x + y;
+  return +x + +y;
 }
 
 function subtract(x, y) {
@@ -17,23 +17,41 @@ function divide(x, y) {
 function operate(operator, x, y) {
   if (operator === "+") return add(x, y);
   if (operator === "-") return subtract(x, y);
-  if (operator === "*") return multiply(x, y);
-  if (operator === "/") return divide(x, u);
+  if (operator === "×") return multiply(x, y);
+  if (operator === "÷") return divide(x, y);
 }
 
 function displayValue() {
   const display = document.querySelector(".display");
+  let firstNum;
+  let operator;
+  let secondNum;
 
   
   const btn_nums = document.querySelectorAll(".number");
   btn_nums.forEach(button => {
     button.addEventListener("click", () => {
-      if (display.textContent === "0") {
+      if (display.textContent === "0" || operator) {
         display.textContent = "";
       }
+
       display.textContent += `${button.textContent}`;
 
-    })
+    });
+  });
+
+  const btn_operators = document.querySelectorAll(".operator")
+  btn_operators.forEach(button => {
+    button.addEventListener("click", () => {
+      firstNum = display.textContent;
+      operator = button.textContent;
+    });
+  });
+
+  const btn_equal = document.querySelector(".equal");
+  btn_equal.addEventListener("click", () => {
+    secondNum = display.textContent;
+    display.textContent = operate(operator, firstNum, secondNum);
   });
 }
 
@@ -50,6 +68,7 @@ arr_operators = ["+", "-", "×", "÷"];
 arr_operators.forEach(operator => {
   const button = document.createElement("button");
   button.textContent = operator;
+  button.classList.add("operator");
   operatorContainer.appendChild(button);
 })
 
