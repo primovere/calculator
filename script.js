@@ -26,13 +26,18 @@ function displayValue() {
   let firstNum;
   let operator;
   let secondNum;
+  let operatorButtonIsClicked = false;
 
   
   const btn_nums = document.querySelectorAll(".number");
   btn_nums.forEach(button => {
     button.addEventListener("click", () => {
-      if (display.textContent === "0" || operator) {
+      if (display.textContent === "0") {
         display.textContent = "";
+      }
+      if (operatorButtonIsClicked) {
+        display.textContent = "";
+        operatorButtonIsClicked = false;
       }
 
       display.textContent += `${button.textContent}`;
@@ -45,6 +50,7 @@ function displayValue() {
     button.addEventListener("click", () => {
       firstNum = display.textContent;
       operator = button.textContent;
+      operatorButtonIsClicked = true;
     });
   });
 
