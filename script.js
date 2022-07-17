@@ -61,11 +61,13 @@ function displayValue() {
 
   const btn_equal = document.querySelector(".equal");
   btn_equal.addEventListener("click", () => {
-    secondNum = display.textContent;
-    display.textContent = operate(operator, firstNum, secondNum);
-    firstNum = false;
-    secondNum = false;
-    operator = false;
+    if (firstNum && operator) {
+      secondNum = display.textContent;
+      display.textContent = operate(operator, firstNum, secondNum);
+      firstNum = false;
+      secondNum = false;
+      operator = false;
+    }
   });
 
   const btn_clear = document.querySelector(".clear");
