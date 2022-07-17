@@ -48,9 +48,14 @@ function displayValue() {
   const btn_operators = document.querySelectorAll(".operator")
   btn_operators.forEach(button => {
     button.addEventListener("click", () => {
+      if (firstNum && operator) {
+        secondNum = display.textContent;
+        display.textContent = operate(operator, firstNum, secondNum);
+      }
       firstNum = display.textContent;
       operator = button.textContent;
       operatorButtonIsClicked = true;
+
     });
   });
 
@@ -58,6 +63,9 @@ function displayValue() {
   btn_equal.addEventListener("click", () => {
     secondNum = display.textContent;
     display.textContent = operate(operator, firstNum, secondNum);
+    firstNum = false;
+    secondNum = false;
+    operator = false;
   });
 
   const btn_clear = document.querySelector(".clear");
