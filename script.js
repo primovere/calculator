@@ -71,6 +71,9 @@ function displayValue() {
   const btn_clear = document.querySelector(".clear");
   btn_clear.addEventListener("click", () => {
     display.textContent = "0";
+    firstNum = false;
+    secondNum = false;
+    operator = false;
   })
 }
 
