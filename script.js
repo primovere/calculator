@@ -10,8 +10,10 @@ function multiply(x, y) {
   return x * y;
 }
 
+const roundAccurately = (number, decimalPlaces) => 
+  Number(Math.round(number + "e" + decimalPlaces) + "e-" + decimalPlaces);
 function divide(x, y) {
-  return x / y;
+  return roundAccurately((x / y), 10);
 }
 
 function operate(operator, x, y) {
