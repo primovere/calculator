@@ -10,7 +10,7 @@ function multiply(x, y) {
   return x * y;
 }
 
-const roundAccurately = (number, decimalPlaces) => 
+const roundAccurately = (number, decimalPlaces) =>
   Number(Math.round(number + "e" + decimalPlaces) + "e-" + decimalPlaces);
 function divide(x, y) {
   return roundAccurately((x / y), 10);
@@ -30,7 +30,7 @@ function displayValue() {
   let secondNum;
   let operatorButtonIsClicked = false;
 
-  
+
   const btn_nums = document.querySelectorAll(".number");
   btn_nums.forEach(button => {
     button.addEventListener("click", () => {
@@ -51,13 +51,16 @@ function displayValue() {
   btn_operators.forEach(button => {
     button.addEventListener("click", () => {
       if (firstNum && operator) {
-        secondNum = display.textContent;
-        display.textContent = operate(operator, firstNum, secondNum);
+        if (display.textContent === "0" && operator === "÷") {
+          alert("Cannot divide by 0!");
+        } else {
+          secondNum = display.textContent;
+          display.textContent = operate(operator, firstNum, secondNum);
+        }
       }
       firstNum = display.textContent;
       operator = button.textContent;
       operatorButtonIsClicked = true;
-
     });
   });
 
@@ -65,10 +68,15 @@ function displayValue() {
   btn_equal.addEventListener("click", () => {
     if (firstNum && operator) {
       secondNum = display.textContent;
-      display.textContent = operate(operator, firstNum, secondNum);
-      firstNum = false;
-      secondNum = false;
-      operator = false;
+      if (display.textContent === "0" && operator === "÷") {
+        operator = false;
+        alert("Cannot divide by 0!");
+      } else {
+        display.textContent = operate(operator, firstNum, secondNum);
+        firstNum = false;
+        secondNum = false;
+        operator = false;
+      }
     }
   });
 
@@ -82,7 +90,7 @@ function displayValue() {
 }
 
 const numContainer = document.querySelector(".num-container");
-for (let i = 0; i < 10; i ++) {
+for (let i = 0; i < 10; i++) {
   const button = document.createElement("button");
   button.textContent = `${i}`;
   button.classList.add("number");
@@ -97,6 +105,5 @@ arr_operators.forEach(operator => {
   button.classList.add("operator");
   operatorContainer.appendChild(button);
 })
-
 
 displayValue();
