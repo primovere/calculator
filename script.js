@@ -10,8 +10,8 @@ function multiply(x, y) {
   return x * y;
 }
 
-const roundAccurately = (number, decimalPlaces) =>
-  Number(Math.round(number + "e" + decimalPlaces) + "e-" + decimalPlaces);
+const roundAccurately = (number, btn_decimalPlaces) =>
+  Number(Math.round(number + "e" + btn_decimalPlaces) + "e-" + btn_decimalPlaces);
 function divide(x, y) {
   return roundAccurately((x / y), 10);
 }
@@ -31,7 +31,6 @@ function displayValue() {
   let operatorButtonIsClicked = false;
 
 
-  const btn_nums = document.querySelectorAll(".number");
   btn_nums.forEach(button => {
     button.addEventListener("click", () => {
       if (display.textContent === "0") {
@@ -96,6 +95,12 @@ for (let i = 0; i < 10; i++) {
   button.classList.add("number");
   numContainer.appendChild(button);
 }
+const btn_nums = document.querySelectorAll(".number");
+const btn_one = btn_nums[1];
+const btn_decimal = document.createElement("button");
+btn_decimal.textContent = ".";
+btn_decimal.classList.add("number");
+numContainer.insertBefore(btn_decimal, btn_one);
 
 const operatorContainer = document.querySelector(".operator-container");
 arr_operators = ["+", "-", "×", "÷"];
