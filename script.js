@@ -46,6 +46,12 @@ function displayValue() {
     });
   });
 
+  btn_decimal.addEventListener("click", () => {
+    if (!(display.textContent).includes(".")) {
+      display.textContent += ".";
+    }
+  });
+
   const btn_operators = document.querySelectorAll(".operator")
   btn_operators.forEach(button => {
     button.addEventListener("click", () => {
