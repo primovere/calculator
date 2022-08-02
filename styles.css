@@ -16,10 +16,15 @@ button {
 
 .function-buttons,
 .left-part,
-.below-section {
+.below-section,
+.calculator {
   display: flex;
 }
 
-.left-part {
+.left-part,
+calculator {
   flex-direction: column;
 }
+
+
+
