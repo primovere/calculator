@@ -8,3 +8,12 @@ button {
   flex-wrap: wrap-reverse;
   width: 180px;
 }
+
+.operator-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.function-buttons {
+  display: flex;
+}
