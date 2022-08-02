@@ -52,6 +52,15 @@ function displayValue() {
     }
   });
 
+  const btn_backspace = document.querySelector(".backspace");
+  btn_backspace.addEventListener("click", function() {
+    if ((display.textContent).length === 1) {
+      display.textContent = "0";
+    } else {
+      display.textContent = (display.textContent).slice(0, (display.textContent).length - 1);
+    }
+  });
+
   const btn_operators = document.querySelectorAll(".operator")
   btn_operators.forEach(button => {
     button.addEventListener("click", () => {
