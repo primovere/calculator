@@ -53,3 +53,13 @@ body {
   justify-content: center;
 }
 
+.function-buttons button,
+.operator {
+  background-color: #ffedc4;;
+  color: #bf9236;
+}
+
+.equal {
+  background-color: #fdc13c;
+  color: #cd9218;
+}
