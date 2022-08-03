@@ -28,10 +28,14 @@ button {
   flex-direction: column;
 }
 
+.display {
+  text-align: end;
+  font-size: 50px;
+  margin-top: 20px;
+}
 .calculator {
   border: 1px solid black;
   padding: 20px;
   width: 280px;
-
 }
 
