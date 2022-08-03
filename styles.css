@@ -1,12 +1,13 @@
 button {
   height: 60px;
   width: 60px;
+  margin: 5px;
 }
 
 .num-container {
   display: flex;
   flex-wrap: wrap-reverse;
-  width: 180px;
+  width: 210px;
 }
 
 .operator-container {
@@ -28,7 +29,9 @@ button {
 }
 
 .calculator {
-  height: 420px;
-  width: 240px;
+  border: 1px solid black;
+  padding: 20px;
+  width: 280px;
+
 }
 
