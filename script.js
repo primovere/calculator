@@ -61,7 +61,7 @@ function displayValue() {
     }
   });
 
-  const btn_operators = document.querySelectorAll(".operator")
+  
   btn_operators.forEach(button => {
     button.addEventListener("click", () => {
       if (firstNum && operator) {
@@ -125,5 +125,7 @@ arr_operators.forEach(operator => {
   button.classList.add("operator");
   operatorContainer.appendChild(button);
 })
-
+const btn_operators = document.querySelectorAll(".operator")
+btn_minus = btn_operators[1];
+btn_minus.style.fontSize = "35px";
 displayValue();

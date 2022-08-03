@@ -2,6 +2,9 @@ button {
   height: 60px;
   width: 60px;
   margin: 5px;
+  border-radius: 20px;
+  border: 0;
+  font-size: 25px;
 }
 
 .num-container {
@@ -10,10 +13,12 @@ button {
   width: 210px;
 }
 
+
 .operator-container {
   display: flex;
   flex-direction: column-reverse;
 }
+
 
 .calculator,
 .function-buttons,
@@ -33,6 +38,7 @@ button {
   font-size: 50px;
   margin-top: 20px;
 }
+
 .calculator {
   border: 1px solid black;
   padding: 20px;
