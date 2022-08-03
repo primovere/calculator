@@ -1,6 +1,6 @@
 button {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   margin: 5px;
   border-radius: 20px;
   border: 0;
@@ -10,7 +10,7 @@ button {
 .num-container {
   display: flex;
   flex-wrap: wrap-reverse;
-  width: 210px;
+  width: 270px;
 }
 
 
@@ -35,13 +35,21 @@ button {
 
 .display {
   text-align: end;
-  font-size: 50px;
-  margin-top: 20px;
+  font-size: 60px;
+  margin-top: 40px;
+  padding-right: 10px;
 }
 
 .calculator {
   border: 1px solid black;
   padding: 20px;
-  width: 280px;
+  width: 360px;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
 }
 
