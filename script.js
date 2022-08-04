@@ -38,11 +38,14 @@ function displayValue() {
       }
       if (operatorButtonIsClicked) {
         display.textContent = "";
+        display.style.fontSize = "60px";
         operatorButtonIsClicked = false;
       }
 
       display.textContent += `${button.textContent}`;
-
+      if ((display.textContent).length > 9) {
+        display.style.fontSize = "30px";
+      }
     });
   });
 
@@ -54,10 +57,14 @@ function displayValue() {
 
   const btn_backspace = document.querySelector(".backspace");
   btn_backspace.addEventListener("click", function() {
+
     if ((display.textContent).length === 1) {
       display.textContent = "0";
     } else {
       display.textContent = (display.textContent).slice(0, (display.textContent).length - 1);
+      if ((display.textContent).length > 9) {
+        display.style.fontSize = "30px";
+      }
     }
   });
 
@@ -70,6 +77,9 @@ function displayValue() {
         } else {
           secondNum = display.textContent;
           display.textContent = operate(operator, firstNum, secondNum);
+          if ((display.textContent).length > 9) {
+            display.style.fontSize = "30px";
+          }
         }
       }
       firstNum = display.textContent;
@@ -87,6 +97,9 @@ function displayValue() {
         alert("Cannot divide by 0!");
       } else {
         display.textContent = operate(operator, firstNum, secondNum);
+        if ((display.textContent).length > 9) {
+          display.style.fontSize = "30px";
+        }
         firstNum = false;
         secondNum = false;
         operator = false;
@@ -97,6 +110,7 @@ function displayValue() {
   const btn_clear = document.querySelector(".clear");
   btn_clear.addEventListener("click", () => {
     display.textContent = "0";
+    display.style.fontSize = "60px";
     firstNum = false;
     secondNum = false;
     operator = false;
