@@ -62,8 +62,8 @@ function displayValue() {
       display.textContent = "0";
     } else {
       display.textContent = (display.textContent).slice(0, (display.textContent).length - 1);
-      if ((display.textContent).length > 9) {
-        display.style.fontSize = "30px";
+      if ((display.textContent).length < 10) {
+        display.style.fontSize = "60px";
       }
     }
   });
