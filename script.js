@@ -126,6 +126,13 @@ function displayValue() {
     }
     changeFontSize();
   });
+
+  const btn_percent = document.querySelector(".percent");
+  btn_percent.addEventListener("click", function() {
+    display.textContent = multiply(display.textContent, "0.01");
+    changeFontSize();
+  });
+  
 }
 
 const numContainer = document.querySelector(".num-container");
