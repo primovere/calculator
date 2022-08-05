@@ -30,6 +30,14 @@ function displayValue() {
   let secondNum;
   let operatorButtonIsClicked = false;
 
+  function changeFontSize() {
+    if ((display.textContent).length > 9) {
+      display.style.fontSize = "30px";
+    } else if ((display.textContent).length < 10) {
+      display.style.fontSize = "60px";
+    }
+  }
+
 
   btn_nums.forEach(button => {
     button.addEventListener("click", () => {
@@ -43,15 +51,14 @@ function displayValue() {
       }
 
       display.textContent += `${button.textContent}`;
-      if ((display.textContent).length > 9) {
-        display.style.fontSize = "30px";
-      }
+      changeFontSize();
     });
   });
 
   btn_decimal.addEventListener("click", () => {
     if (!(display.textContent).includes(".")) {
       display.textContent += ".";
+      changeFontSize(((display.textContent).length > 9), 30);
     }
   });
 
@@ -62,9 +69,7 @@ function displayValue() {
       display.textContent = "0";
     } else {
       display.textContent = (display.textContent).slice(0, (display.textContent).length - 1);
-      if ((display.textContent).length < 10) {
-        display.style.fontSize = "60px";
-      }
+      changeFontSize();
     }
   });
 
@@ -77,9 +82,7 @@ function displayValue() {
         } else {
           secondNum = display.textContent;
           display.textContent = operate(operator, firstNum, secondNum);
-          if ((display.textContent).length > 9) {
-            display.style.fontSize = "30px";
-          }
+          changeFontSize();
         }
       }
       firstNum = display.textContent;
@@ -97,9 +100,7 @@ function displayValue() {
         alert("Cannot divide by 0!");
       } else {
         display.textContent = operate(operator, firstNum, secondNum);
-        if ((display.textContent).length > 9) {
-          display.style.fontSize = "30px";
-        }
+        changeFontSize();
         firstNum = false;
         secondNum = false;
         operator = false;
@@ -110,7 +111,7 @@ function displayValue() {
   const btn_clear = document.querySelector(".clear");
   btn_clear.addEventListener("click", () => {
     display.textContent = "0";
-    display.style.fontSize = "60px";
+    changeFontSize();
     firstNum = false;
     secondNum = false;
     operator = false;
@@ -123,6 +124,7 @@ function displayValue() {
     } else {
       display.textContent = (display.textContent).replace("-", "");
     }
+    changeFontSize();
   });
 }
 
