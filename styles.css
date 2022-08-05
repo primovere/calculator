@@ -13,12 +13,10 @@ button {
   width: 240px;
 }
 
-
 .operator-container {
   display: flex;
   flex-direction: column-reverse;
 }
-
 
 .calculator,
 .function-buttons,
@@ -69,7 +67,27 @@ body {
   color: #364bbf;
 }
 
+.function-buttons button:hover,
+.operator:hover {
+  background-color: #7dcbf0;
+}
+
+.function-buttons button:active,
+.operator:active {
+  background-color: #2fb2f0;
+}
+
 .equal {
   background-color: #3cc7fd;
+  color: #1834cd;
+}
+
+.equal:hover {
+  background-color: #0bb5f8;
+  color: #1834cd;
+}
+
+.equal:active {
+  background-color: #3ca3fd;
   color: #1834cd;
 }
