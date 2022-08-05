@@ -115,6 +115,15 @@ function displayValue() {
     secondNum = false;
     operator = false;
   })
+
+  const btn_negate = document.querySelector(".negate");
+  btn_negate.addEventListener("click", () => {
+    if (!(display.textContent).includes("-")) {
+      display.textContent = "-" + display.textContent;
+    } else {
+      display.textContent = (display.textContent).replace("-", "");
+    }
+  });
 }
 
 const numContainer = document.querySelector(".num-container");
